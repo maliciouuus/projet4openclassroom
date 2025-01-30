@@ -1,16 +1,28 @@
-from models.task import Task
-from views.task_view import TaskView
-from controllers.task_controller import TaskController
+#!/usr/bin/env python3
+"""
+Centre d'échecs - Gestionnaire de tournois
+Programme de gestion de tournois d'échecs suivant les règles du système suisse.
+"""
+
+from views.main_view import MainView
+from models.data_manager import DataManager
+from controllers.main_controller import MainController
 
 def main():
-    # Créer les instances de Model, View et Controller
-    task_model = Task("Apprendre MVC", "Comprendre le pattern MVC en Python")
-    task_view = TaskView()
-    task_controller = TaskController(task_model, task_view)
+    """Point d'entrée principal du programme."""
+    # Initialisation des composants
+    view = MainView()
+    data_manager = DataManager()
+    controller = MainController(view, data_manager)
 
-    # Utiliser le controller pour manipuler les données et la vue
-    task_controller.update_task_details("Apprendre MVC", "Pattern MVC maîtrisé!")
-    task_controller.display_task()
+    try:
+        # Démarrage de l'application
+        controller.run()
+    except KeyboardInterrupt:
+        print("\nFermeture du programme...")
+    except Exception as e:
+        print(f"\nUne erreur est survenue : {str(e)}")
+        raise
 
 if __name__ == "__main__":
     main()
