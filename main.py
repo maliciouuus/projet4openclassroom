@@ -24,5 +24,14 @@ def main():
         print(f"\nUne erreur est survenue : {str(e)}")
         raise
 
+
+class Menu:
+
+
+
+class Players:
+    def __init__(self, name, surname, birthdate, idchess)
+
+
 if __name__ == "__main__":
     main()
