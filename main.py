@@ -8,7 +8,7 @@ from views.menu import MainView
 
 
 def main():
-    MainView().montrermenu()
+    MainView().afficher_menu()
 
 
 if __name__ == "__main__":

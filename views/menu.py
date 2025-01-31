@@ -1,10 +1,9 @@
 
+from controllers.exit import Exit
 
+class MainView():
 
-
-class MainView(View):
-
-    def afficher_menu():
+    def afficher_menu(self):
         print("Centre Échecs")
         print("--------------------")
         print("1. Ajouter un joueur")
@@ -14,4 +13,21 @@ class MainView(View):
         print("5. Afficher les rapports")
         print("6. Quitter")
         print("--------------------")
-        number_menu = int(input("Veuillez saisir le chiffre selon l'option soujaité:"))
+        input_text = "Veuillez saisir le chiffre selon l'option souhaité:"
+        number_menu = int(input(f"{input_text}"))
+        View(number_menu).checknumber()
+
+
+
+
+
+
+class View():
+    def __init__(self, number):
+        self.number = number
+
+    def checknumber(self):
+        if self.number == 6:
+            Exit.start()
+        if self.number == 2:
+            print("voici jouers")
