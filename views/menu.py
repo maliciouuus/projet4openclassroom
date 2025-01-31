@@ -1,4 +1,5 @@
 from controllers.exit import Exit
+from controllers.player_controller import PlayerController
 
 
 class MainView:
@@ -35,7 +36,7 @@ class MainView:
     def check_number(self, choice):
         """Exécute l'action correspondant au choix de l'utilisateur."""
         actions = {
-            1: self.create_player,
+            1: PlayerController().add_players,
             2: self.show_players,
             3: self.create_tournament,
             4: self.show_tournaments,
@@ -50,9 +51,8 @@ class MainView:
         last_name = input("Nom de famille : ").strip()
         first_name = input("Prénom : ").strip()
         national_id = input("Identifiant national d’échecs (ex: AB12345) : ").strip()
-        ranking = int(input("Classement initial (facultatif, 0 par défaut) : "))
+        ranking = int(input("Classement initial (facultatif, 0 par défaut) : ")).strip()
 
-        print("Succès")
         return {
             "last_name": last_name,
             "first_name": first_name,
@@ -79,3 +79,9 @@ class MainView:
     def show_reports():
         """Action pour afficher les rapports."""
         print("Affichage des rapports...")
+
+
+    @staticmethod
+    def show_success_msg():
+        """Action pour afficher les rapports."""
+        print("Succès")
