@@ -51,7 +51,7 @@ class MainView:
         last_name = input("Nom de famille : ").strip()
         first_name = input("Prénom : ").strip()
         national_id = input("Identifiant national d’échecs (ex: AB12345) : ").strip()
-        ranking = int(input("Classement initial (facultatif, 0 par défaut) : ")).strip()
+        ranking = int(input("Classement initial (facultatif, 0 par défaut) : "))
 
         return {
             "last_name": last_name,
@@ -63,8 +63,8 @@ class MainView:
     @staticmethod
     def show_players():
         """Action pour afficher la liste des joueurs."""
-        print("Affichage de la liste des joueurs...")
-
+        from models.player import Player
+        print(Player.load_players())
     @staticmethod
     def create_tournament():
         """Action pour créer un tournoi."""

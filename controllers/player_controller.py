@@ -13,11 +13,7 @@ class PlayerController:
         from views.menu import MainView
         while True:
             player_info = MainView.create_player()
-            player = Player(**player_info)  # Création d'une instance Player
-            #self.players.append(player.to_dict())  # Ajout sous forme de dict
+            #player = Player(**player_info)  # Création d'une instance Player
 
-            #Player.save_players(self.players)  # Sauvegarde immédiate dans JSON
             MainView.show_success_msg()
-
-            #if not PlayerView.ask_continue():
-             #   break  # Arrête l'ajout si l'utilisateur ne veut plus continuer
+            break
