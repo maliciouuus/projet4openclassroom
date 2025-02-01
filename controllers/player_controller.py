@@ -13,7 +13,13 @@ class PlayerController:
         from views.menu import MainView
         while True:
             player_info = MainView.create_player()
-            #player = Player(**player_info)  # Création d'une instance Player
+            import json                
+            # Convert Python to JSON  
+            json_object = json.dumps(player_info, indent = 4) 
+            from models.player import Player
+            # Print JSON object
+            print(json_object)
+            player = Player(player_info)  # Création d'une instance Player
 
             MainView.show_success_msg()
             break

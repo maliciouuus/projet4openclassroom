@@ -2,13 +2,9 @@ import json
 import os
 
 class Player:
-    def __init__(self, first_name, last_name, national_id, ranking=0):
+    def __init__(self, player_dict):
         """Initialise un joueur avec les données fournies."""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.national_id = national_id
-        self.ranking = ranking
-
+        self.player_dict = player_dict
     #def 
 
 
@@ -21,8 +17,10 @@ class Player:
         # Spécifie le chemin complet du fichier
         file_path = os.path.join('data', filename)
 
-        with open(file_path, 'w') as f:
-            json.dump([player.to_dict() for player in players], f, indent=4)
+        print(self.player_dict)
+
+#       with open(file_path, 'w') as f:
+            #json.dump([player.to_dict() for player in players], f, indent=4)
 
     @staticmethod
     def load_players(filename='players.json'):
@@ -30,9 +28,6 @@ class Player:
         # Spécifie le chemin complet du fichier
         file_path = os.path.join('data', filename)
 
-        try:
-            with open(file_path, 'r') as f:
-                players_data = json.load(f)
-                return [Player(**data) for data in players_data]  # Crée une instance de Player pour chaque dictionnaire
-        except FileNotFoundError:
-            return []  # Si le fichier n'existe pas encore, retourne une liste vide
+        with open(file_path, "r") as read_file:
+            data = json.load(read_file)
+            return data
