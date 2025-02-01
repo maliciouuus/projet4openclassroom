@@ -23,3 +23,10 @@ class PlayerController:
 
             MainView.show_success_msg()
             break
+
+    def alphabetic_playeurs(self):
+        print("cc")
+
+
+    def rank_playeurs(self):
+        print("cc")

@@ -16,7 +16,7 @@ class MainView:
             print("--------------------")
 
             # Demande un choix valide entre 1 et 6
-            number_menu = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 6 : ", 1, 6)
+            number_menu = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 4 : ", 1, 4)
             self.check_number(number_menu)
 
     @staticmethod
@@ -37,7 +37,7 @@ class MainView:
             1: PlayerController().add_players,
             2: self.create_tournament,
             3: self.show_rapport,
-            6: Exit.start  # Quitte l'application
+            4: Exit.start  # Quitte l'application
         }
         actions[choice]()
 
@@ -45,9 +45,20 @@ class MainView:
     def check_number_rapport(self, choice):
         """Exécute l'action correspondant au choix de l'utilisateur."""
         actions = {
-            1: PlayerController().add_players,
+            1: self.players_menu,
             2: self.create_tournament,
-            3: Exit.start  # coder le retour si possible
+            3: self.afficher_menu  # coder le retour si possible
+        }
+        actions[choice]()
+
+
+    def check_number_players(self, choice):
+        """Exécute l'action correspondant au choix de l'utilisateur."""
+        from models.player import Player
+        actions = {
+            1: Player.load_players(),
+            2: self.create_tournament,
+            3: self.afficher_menu  # coder le retour si possible
         }
         actions[choice]()
 
@@ -66,28 +77,25 @@ class MainView:
             "ranking": ranking
         }
 
-    @staticmethod
-    def show_rapport():
+    def show_rapport(self):
         print("--------------------")
         print("1. Joueurs")
         print("2. Tournoi")
         print("3. Retour")
         print("--------------------")
         number_menu = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 3 : ", 1, 3)
+        self.check_number_rapport(number_menu)
 
 
- 
-    def players_menu():
-
+    def players_menu(self):  # ✅ Ajout de self
         print("--------------------")
         print("1. Alphabetique")
         print("2. Rang")
         print("3. Retour")
-        X = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 3 : ", 1, 3)
-        print("cc" if x == 1 else "deux" if x == 2 else "3")
+        
+        x = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 3 : ", 1, 3)
+        self.check_number_players(x)  # ✅ Plus d'erreur ici
 
-        from models.player import Player
-        print(Player.load_players())
 
     @staticmethod
     def create_tournament():
