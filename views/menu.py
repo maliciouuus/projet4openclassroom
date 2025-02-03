@@ -1,5 +1,6 @@
 from controllers.exit import Exit
 from controllers.player_controller import PlayerController
+from models.player import Player
 
 
 class MainView:
@@ -51,15 +52,33 @@ class MainView:
         }
         actions[choice]()
 
+    @staticmethod
+    def display_sorted_players(option: int):
+        """
+        Affiche les joueurs triés selon l'option choisie (1 = alphabétique, 2 = rang).
+        """
+        if option == 1:
+            result = Player.alphabetic_players()
+        elif option == 2:
+            result = Player.load_and_sort_players_by_rank()
+        else:
+            print("Option invalide. Choisissez 1 (tri alphabétique) ou 2 (tri par rang).")
+            return
+        import json
+        players_list = json.loads(result)  # Convertit la chaîne JSON en liste Python
+        formatted_players = PlayerController.format_players(players_list)
+        print("\n".join(formatted_players))
+
 
     def check_number_players(self, choice):
         """Exécute l'action correspondant au choix de l'utilisateur."""
         from models.player import Player
         actions = {
-            1: Player.load_players(),
-            2: self.create_tournament,
-            3: self.afficher_menu  # coder le retour si possible
+            1: lambda: MainView.display_sorted_players(choice),
+            2: lambda: MainView.display_sorted_players(choice),
+            3: self.afficher_menu
         }
+
         actions[choice]()
 
     @staticmethod
@@ -92,7 +111,6 @@ class MainView:
         print("1. Alphabetique")
         print("2. Rang")
         print("3. Retour")
-        
         x = self.get_valid_input("Veuillez saisir un chiffre entre 1 et 3 : ", 1, 3)
         self.check_number_players(x)  # ✅ Plus d'erreur ici
 

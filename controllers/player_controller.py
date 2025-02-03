@@ -1,5 +1,5 @@
 
-
+import json
 
 class PlayerController:
     """Contrôleur gérant l'ajout des joueurs."""
@@ -13,7 +13,6 @@ class PlayerController:
         from views.menu import MainView
         while True:
             player_info = MainView.create_player()
-            import json                
             # Convert Python to JSON  
             json_object = json.dumps(player_info, indent = 4) 
             from models.player import Player
@@ -24,9 +23,9 @@ class PlayerController:
             MainView.show_success_msg()
             break
 
-    def alphabetic_playeurs(self):
-        print("cc")
+    @staticmethod
+    def format_players(players):
+        """Formate la liste des joueurs pour l'affichage."""
+        return [f"Nom: {p['name']}, Prénom: {p['first_name']}, Rang: {p['rank']}" for p in players]  #fonction pour view
 
 
-    def rank_playeurs(self):
-        print("cc")
