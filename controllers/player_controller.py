@@ -10,16 +10,16 @@ class PlayerController:
 
     def add_players(self):
         """Ajoute de nouveaux joueurs jusqu'à ce que l'utilisateur arrête."""
-        while True:
-            player_info = MainView.create_player()
-            # Convert Python to JSON  
-            json_object = json.dumps(player_info, indent = 4) 
-            from models.player import Player
-            # Print JSON object
-            print(json_object)
-            player = Player()  #Création d'une instance Player
-            player.save_player(json_object)
-            break
+        from views.menu import MainView
+        from models.player import Player
+
+        player_info = MainView.create_player()  # Retourne déjà un dictionnaire
+        
+        print("Données du joueur avant sauvegarde :", player_info)  # Debug
+
+        player = Player()  # Création d'une instance Player
+        player.save_player(player_info)  # Envoie directement le dictionnaire
+
 
     @staticmethod
     def format_players(players):
