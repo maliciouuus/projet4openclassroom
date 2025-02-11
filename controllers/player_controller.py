@@ -1,30 +1,35 @@
+"""Module de contrôle des joueurs."""
+from models.player import Player
 
-import json
 
 class PlayerController:
-    """Contrôleur gérant l'ajout des joueurs."""
+    """Contrôleur gérant l'ajout et la gestion des joueurs."""
 
     def __init__(self):
-        #self.players = Player.load_players()  # Charge les joueurs existants
-        self.players = None
+        """Initialise le contrôleur des joueurs."""
+        self.players = []
 
-    def add_players(self):
-        """Ajoute de nouveaux joueurs jusqu'à ce que l'utilisateur arrête."""
-        from views.menu import MainView
-        from models.player import Player
+    def add_players(self, player_info):
+        """Ajoute un nouveau joueur à la base de données.
 
-        player_info = MainView.create_player()  # Retourne déjà un dictionnaire
-        
-        print("Données du joueur avant sauvegarde :", player_info)  # Debug
-
-        player = Player()  # Création d'une instance Player
-        player.save_player(player_info)  # Envoie directement le dictionnaire
-
+        Args:
+            player_info (dict): Informations du joueur à ajouter
+        """
+        Player.save_player(player_info)
 
     @staticmethod
     def format_players(players):
-        """Formate la liste des joueurs pour l'affichage."""
-        return [f"Nom: {p['name']}, Prénom: {p['first_name']}, Rang: {p['rank']}" for p in players]  #fonction pour view
+        """Formate la liste des joueurs pour l'affichage.
 
+        Args:
+            players (list): Liste des joueurs à formater
 
-#en gros il y'a un soucis niveau du type de json entre add users et et save json en gros ça enregistre pas de la bonne façon il faut que tout soit adapté pour ajouter une valeur ç un fichier existrant ou bien créer un fichier similaire si il y'a pas de fichiers et faire en sorte que toutes les fonctions marchent bien entre elles c'est important 
+        Returns:
+            list: Liste des joueurs formatée pour l'affichage
+        """
+        return [
+            f"Nom: {player['name']}, "
+            f"Prénom: {player['first_name']}, "
+            f"Rang: {player['rank']}"
+            for player in players
+        ]

@@ -1,1 +1,416 @@
-{"_default": {"1": {"name": "rrr", "place": "fff", "date": "30-01-2025-01:37", "time_control": "Blitz", "players": [{"name": "dd", "first_name": "dd", "dob": "09-09-9999", "sex": "H", "total_score": 0, "rank": 0, "tournament_score": 0}, {"name": "hi", "first_name": "hi", "dob": "67-87-2004", "sex": "H", "total_score": 0, "rank": 2, "tournament_score": 0}], "nb_rounds": 4, "rounds": [], "desc": "ggg"}, "2": {"name": "cc", "place": "cc", "date": "31-01-2025-18:46", "time_control": "Bullet", "players": [{"name": "dd", "first_name": "dd", "dob": "09-09-9999", "sex": "H", "total_score": 0, "rank": 3, "tournament_score": 0}, {"name": "filou", "first_name": "filou", "dob": "56-78-2004", "sex": "H", "total_score": 0, "rank": 10, "tournament_score": 0}], "nb_rounds": 4, "rounds": [], "desc": "dd"}}}
+{
+    "_default": {
+        "1": {
+            "name": "rrr",
+            "place": "fff",
+            "date": "30-01-2025-01:37",
+            "time_control": "Blitz",
+            "players": [
+                {
+                    "name": "dd",
+                    "first_name": "dd",
+                    "dob": "09-09-9999",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 0,
+                    "tournament_score": 0
+                },
+                {
+                    "name": "hi",
+                    "first_name": "hi",
+                    "dob": "67-87-2004",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 2,
+                    "tournament_score": 0
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "ggg"
+        },
+        "2": {
+            "name": "cc",
+            "place": "cc",
+            "date": "31-01-2025-18:46",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "dd",
+                    "first_name": "dd",
+                    "dob": "09-09-9999",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 3,
+                    "tournament_score": 0
+                },
+                {
+                    "name": "filou",
+                    "first_name": "filou",
+                    "dob": "56-78-2004",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 10,
+                    "tournament_score": 0
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "dd"
+        },
+        "3": {
+            "name": "cc",
+            "place": "cc",
+            "date": "15-06-2008",
+            "time_control": "Bullet",
+            "players": [],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "fff"
+        },
+        "4": {
+            "name": "rrr",
+            "place": "fff",
+            "date": "30-01-2025-01:37",
+            "time_control": "Blitz",
+            "players": [
+                {
+                    "name": "dd",
+                    "first_name": "dd",
+                    "dob": "09-09-9999",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 0,
+                    "tournament_score": 0
+                },
+                {
+                    "name": "hi",
+                    "first_name": "hi",
+                    "dob": "67-87-2004",
+                    "sex": "H",
+                    "total_score": 0,
+                    "rank": 2,
+                    "tournament_score": 0
+                },
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "ggg",
+            "current_round": 0,
+            "player_scores": {}
+        },
+        "5": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "ddddd",
+            "current_round": 0,
+            "player_scores": {}
+        },
+        "6": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "dedu",
+                    "first_name": "flo",
+                    "dob": "16-06-2004",
+                    "sex": "",
+                    "national_id": "AB12346",
+                    "rank": 19
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "ddddd",
+            "current_round": 0,
+            "player_scores": {}
+        },
+        "7": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "dedu",
+                    "first_name": "flo",
+                    "dob": "16-06-2004",
+                    "sex": "",
+                    "national_id": "AB12346",
+                    "rank": 19
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [
+                {
+                    "name": "Round 1",
+                    "matches": [
+                        [
+                            [
+                                {
+                                    "name": "dedu",
+                                    "first_name": "flo",
+                                    "dob": "16-06-2004",
+                                    "sex": "",
+                                    "national_id": "AB12346",
+                                    "rank": 19
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "name": "cc",
+                                    "first_name": "cc",
+                                    "dob": "",
+                                    "sex": "",
+                                    "national_id": "334",
+                                    "rank": 1
+                                },
+                                0
+                            ]
+                        ]
+                    ],
+                    "start_time": "2025-02-04 19:53:43",
+                    "end_time": null
+                }
+            ],
+            "desc": "ddddd",
+            "current_round": 1,
+            "player_scores": {
+                "334": 0,
+                "AB12346": 0
+            }
+        },
+        "8": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "dedu",
+                    "first_name": "flo",
+                    "dob": "16-06-2004",
+                    "sex": "",
+                    "national_id": "AB12346",
+                    "rank": 19
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [
+                {
+                    "name": "Round 1",
+                    "matches": [
+                        [
+                            [
+                                {
+                                    "name": "dedu",
+                                    "first_name": "flo",
+                                    "dob": "16-06-2004",
+                                    "sex": "",
+                                    "national_id": "AB12346",
+                                    "rank": 19
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "name": "cc",
+                                    "first_name": "cc",
+                                    "dob": "",
+                                    "sex": "",
+                                    "national_id": "334",
+                                    "rank": 1
+                                },
+                                0
+                            ]
+                        ]
+                    ],
+                    "start_time": "2025-02-04 19:53:43",
+                    "end_time": "2025-02-04 19:53:52"
+                }
+            ],
+            "desc": "ddddd",
+            "current_round": 1,
+            "player_scores": {
+                "334": 0,
+                "AB12346": 1
+            }
+        },
+        "9": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "dedu",
+                    "first_name": "flo",
+                    "dob": "16-06-2004",
+                    "sex": "",
+                    "national_id": "AB12346",
+                    "rank": 19
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [
+                {
+                    "name": "Round 2",
+                    "matches": [
+                        [
+                            [
+                                {
+                                    "name": "dedu",
+                                    "first_name": "flo",
+                                    "dob": "16-06-2004",
+                                    "sex": "",
+                                    "national_id": "AB12346",
+                                    "rank": 19
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "name": "cc",
+                                    "first_name": "cc",
+                                    "dob": "",
+                                    "sex": "",
+                                    "national_id": "334",
+                                    "rank": 1
+                                },
+                                0
+                            ]
+                        ]
+                    ],
+                    "start_time": "2025-02-04 19:54:17",
+                    "end_time": null
+                }
+            ],
+            "desc": "ddddd",
+            "current_round": 2,
+            "player_scores": {
+                "334": 0,
+                "AB12346": 1
+            }
+        },
+        "10": {
+            "name": "Maubuege",
+            "place": "maubeuge",
+            "date": "16-08-2007",
+            "time_control": "Bullet",
+            "players": [
+                {
+                    "name": "cc",
+                    "first_name": "cc",
+                    "dob": "",
+                    "sex": "",
+                    "national_id": "334",
+                    "rank": 1
+                },
+                {
+                    "name": "dedu",
+                    "first_name": "flo",
+                    "dob": "16-06-2004",
+                    "sex": "",
+                    "national_id": "AB12346",
+                    "rank": 19
+                }
+            ],
+            "nb_rounds": 4,
+            "rounds": [
+                {
+                    "name": "Round 2",
+                    "matches": [
+                        [
+                            [
+                                {
+                                    "name": "dedu",
+                                    "first_name": "flo",
+                                    "dob": "16-06-2004",
+                                    "sex": "",
+                                    "national_id": "AB12346",
+                                    "rank": 19
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "name": "cc",
+                                    "first_name": "cc",
+                                    "dob": "",
+                                    "sex": "",
+                                    "national_id": "334",
+                                    "rank": 1
+                                },
+                                1
+                            ]
+                        ]
+                    ],
+                    "start_time": "2025-02-04 19:54:17",
+                    "end_time": "2025-02-04 19:54:19"
+                }
+            ],
+            "desc": "ddddd",
+            "current_round": 2,
+            "player_scores": {
+                "334": 1,
+                "AB12346": 1
+            }
+        }
+    }
+}
