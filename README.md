@@ -111,7 +111,7 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à
 
 ## Auteur
 
-[Votre Nom]
+Sacha Redelberger
 
 ## Licence
 
