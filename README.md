@@ -2,9 +2,7 @@
 
 Ce projet est un gestionnaire de tournois d'échecs qui permet d'organiser et de suivre des tournois selon le système suisse.
 
-## Lien du Repository GitHub
 
-[Lien vers le repository GitHub](https://github.com/votre-username/projet4openclassroom)
 
 ## Fonctionnalités
 
@@ -21,11 +19,7 @@ Ce projet est un gestionnaire de tournois d'échecs qui permet d'organiser et de
 
 ## Installation
 
-1. Clonez le repository :
-```bash
-git clone https://github.com/votre-username/projet4openclassroom.git
-cd projet4openclassroom
-```
+1. Clonez le repository 
 
 2. Créez un environnement virtuel :
 ```bash
@@ -74,27 +68,6 @@ flake8 --format=html --htmldir=flake8_rapport --max-line-length=119
 ```
 Le rapport sera généré dans le dossier `flake8_rapport`.
 
-## Structure du Projet
-
-```
-projet4openclassroom/
-├── controllers/
-│   ├── player_controller.py
-│   └── tournament_controller.py
-├── models/
-│   ├── player.py
-│   ├── round.py
-│   └── tournament.py
-├── views/
-│   └── menu.py
-├── data/
-│   ├── players.json
-│   └── tournaments.json
-├── main.py
-├── requirements.txt
-└── README.md
-```
-
 ## Génération des Rapports
 
 L'application peut générer différents types de rapports :
@@ -113,6 +86,3 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à
 
 Sacha Redelberger
 
-## Licence
-
-Ce projet est sous licence MIT. 

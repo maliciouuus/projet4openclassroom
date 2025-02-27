@@ -1,5 +1,6 @@
 """Module de contrôle des joueurs."""
 from models.player import Player
+from views.menu import MainView
 
 
 class PlayerController:
@@ -8,6 +9,7 @@ class PlayerController:
     def __init__(self):
         """Initialise le contrôleur des joueurs."""
         self.players = []
+        self.view = MainView()
 
     def add_players(self, player_info):
         """Ajoute un nouveau joueur à la base de données.
@@ -15,7 +17,23 @@ class PlayerController:
         Args:
             player_info (dict): Informations du joueur à ajouter
         """
-        Player.save_player(player_info)
+        try:
+            Player.save_player(player_info)
+            self.view.show_success_msg()
+        except ValueError as e:
+            self.view.show_error(str(e))
+
+    def load_players(self):
+        """Charge la liste des joueurs.
+
+        Returns:
+            list: Liste des joueurs
+        """
+        try:
+            return Player.load_players()
+        except ValueError as e:
+            self.view.show_error(str(e))
+            return []
 
     @staticmethod
     def format_players(players):

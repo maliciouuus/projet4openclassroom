@@ -15,9 +15,11 @@ class TournamentView:
         name = input("Nom du tournoi : ").strip()
         place = input("Lieu : ").strip()
         date = input("Date (jj-mm-aaaa) : ").strip()
-        time_control = input("Contrôle du temps (Bullet, Blitz, Rapide) : ").strip()
+        time_prompt = "Contrôle du temps (Bullet, Blitz, Rapide) : "
+        time_control = input(time_prompt).strip()
         desc = input("Description : ").strip()
-        nb_rounds = int(input("Nombre de rounds (4 par défaut) : ") or 4)
+        rounds_prompt = "Nombre de rounds (4 par défaut) : "
+        nb_rounds = int(input(rounds_prompt) or 4)
 
         tournament = {
             "name": name,

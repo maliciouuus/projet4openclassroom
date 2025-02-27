@@ -36,7 +36,8 @@ class Round:
 
         Args:
             match_index (int): Index du match à mettre à jour
-            winner (int, optional): 1 pour joueur1, 2 pour joueur2, None pour match nul
+            winner (int, optional): 1 pour joueur1, 2 pour joueur2,
+                                  None pour match nul
         """
         if 0 <= match_index < len(self.matches):
             if winner == 1:

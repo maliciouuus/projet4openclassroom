@@ -411,6 +411,18 @@
                 "334": 1,
                 "AB12346": 1
             }
+        },
+        "11": {
+            "name": "fff",
+            "place": "FFF",
+            "date": "16-09-2009",
+            "time_control": "Bullet",
+            "players": [],
+            "nb_rounds": 4,
+            "rounds": [],
+            "desc": "dd",
+            "current_round": 0,
+            "player_scores": {}
         }
     }
 }

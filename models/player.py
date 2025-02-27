@@ -47,7 +47,8 @@ class Player:
             player (dict): Dictionnaire contenant les informations du joueur
 
         Raises:
-            ValueError: Si le joueur n'est pas un dictionnaire ou si les données sont invalides
+            ValueError: Si le joueur n'est pas un dictionnaire ou si les
+                      données sont invalides
         """
         os.makedirs("data", exist_ok=True)
 
@@ -60,9 +61,15 @@ class Player:
         if not player.get("first_name"):
             raise ValueError("Le prénom est obligatoire")
         if not player.get("dob") or not Player.validate_date(player["dob"]):
-            raise ValueError("La date de naissance est invalide (format: JJ-MM-AAAA)")
-        if not player.get("national_id") or not Player.validate_national_id(player["national_id"]):
-            raise ValueError("L'identifiant national est invalide (format: AB12345)")
+            raise ValueError(
+                "La date de naissance est invalide (format: JJ-MM-AAAA)"
+            )
+        if not player.get("national_id") or not Player.validate_national_id(
+            player["national_id"]
+        ):
+            raise ValueError(
+                "L'identifiant national est invalide (format: AB12345)"
+            )
 
         try:
             with open(Player.FILE_PATH, "r", encoding="utf-8") as file:
@@ -84,7 +91,8 @@ class Player:
             "rank": player.get("ranking", player.get("rank", 0))
         }
 
-        existing_ids = list(map(int, data["_default"].keys())) if data["_default"] else []
+        existing_ids = list(map(int, data["_default"].keys()))
+        existing_ids = existing_ids if data["_default"] else []
         new_id = str(max(existing_ids) + 1) if existing_ids else "1"
 
         data["_default"][new_id] = formatted_player
@@ -101,6 +109,9 @@ class Player:
 
         Returns:
             list: Liste des joueurs valides
+
+        Raises:
+            ValueError: Si des données de joueur sont invalides
         """
         try:
             with open(Player.FILE_PATH, "r", encoding="utf-8") as file:
@@ -108,11 +119,22 @@ class Player:
             players = list(data.get("_default", {}).values())
 
             valid_players = []
+            invalid_players = []
             for player in players:
-                if isinstance(player, dict) and "name" in player and "rank" in player:
+                is_valid = (
+                    isinstance(player, dict) and
+                    "name" in player and
+                    "rank" in player
+                )
+                if is_valid:
                     valid_players.append(player)
                 else:
-                    print(f"❌ Données incorrectes ignorées : {player}")
+                    invalid_players.append(player)
+
+            if invalid_players:
+                raise ValueError(
+                    f"Données incorrectes trouvées : {invalid_players}"
+                )
 
             return valid_players
 
@@ -147,9 +169,11 @@ class Player:
                 try:
                     player["rank"] = int(player["rank"])
                 except (ValueError, TypeError):
-                    raise TypeError(
-                        f"Le joueur {player.get('name', 'Inconnu')} a un rang non valide: {player.get('rank')}"
+                    msg = (
+                        f"Le joueur {player.get('name', 'Inconnu')} "
+                        f"a un rang non valide: {player.get('rank')}"
                     )
+                    raise TypeError(msg)
 
         sorted_players = sorted(players, key=lambda x: x["rank"], reverse=True)
         return json.dumps(sorted_players, indent=4, ensure_ascii=False)
