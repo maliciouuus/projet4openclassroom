@@ -1,6 +1,5 @@
 """Module de contrôle des joueurs."""
 from models.player import Player
-from views.menu import MainView
 
 
 class PlayerController:
@@ -8,6 +7,7 @@ class PlayerController:
 
     def __init__(self):
         """Initialise le contrôleur des joueurs."""
+        from views.menu import MainView
         self.players = []
         self.view = MainView()
 

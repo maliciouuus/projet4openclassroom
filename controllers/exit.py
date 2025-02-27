@@ -1,6 +1,5 @@
 """Module de gestion de la sortie du programme."""
 import sys
-from views.menu import MainView
 
 
 class Exit:
@@ -8,6 +7,7 @@ class Exit:
 
     def __init__(self):
         """Initialise le contrôleur de sortie."""
+        from views.menu import MainView
         self.view = MainView()
 
     def start(self):

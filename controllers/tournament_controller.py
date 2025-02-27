@@ -1,7 +1,6 @@
 """Module de contrôle des tournois."""
 from models.tournament import Tournament
 from models.player import Player
-from views.menu import MainView
 
 
 class TournamentController:
@@ -11,6 +10,7 @@ class TournamentController:
 
     def __init__(self):
         """Initialise le contrôleur des tournois."""
+        from views.menu import MainView
         self.view = MainView()
 
     def create_tournament(self):

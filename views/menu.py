@@ -8,9 +8,15 @@ from models.player import Player
 class MainView:
     """Vue principale affichant le menu et gérant les entrées utilisateur."""
 
-    def __init__(self):
-        """Initialise la vue principale."""
-        self.player_controller = PlayerController()
+    def __init__(self, player_controller=None, tournament_controller=None):
+        """Initialise la vue principale.
+
+        Args:
+            player_controller: Contrôleur des joueurs
+            tournament_controller: Contrôleur des tournois
+        """
+        self.player_controller = player_controller
+        self.tournament_controller = tournament_controller
 
     def afficher_menu(self):
         """Affiche le menu principal et gère les interactions utilisateur."""
