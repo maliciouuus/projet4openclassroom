@@ -63,14 +63,18 @@ class MainView:
         Args:
             choix (int): Choix de l'utilisateur
         """
-        actions = {
-            1: self.creer_joueur,
-            2: TournamentController.create_tournament,
-            3: self.afficher_rapports,
-            4: self.gerer_tournois,
-            5: Exit.start
-        }
-        actions[choix]()
+        if choix == 5:
+            from controllers.exit import Exit
+            exit_controller = Exit()
+            exit_controller.start()
+        else:
+            actions = {
+                1: self.creer_joueur,
+                2: self.tournament_controller.create_tournament,
+                3: self.afficher_rapports,
+                4: self.gerer_tournois
+            }
+            actions[choix]()
 
     def creer_joueur(self):
         """Crée un nouveau joueur."""
@@ -97,7 +101,7 @@ class MainView:
         """
         actions = {
             1: self.afficher_menu_joueurs,
-            2: TournamentController.list_tournaments,
+            2: self.tournament_controller.list_tournaments,
             3: self.afficher_menu
         }
         actions[choix]()
@@ -183,7 +187,7 @@ class MainView:
 
     def gerer_tournois(self):
         """Affiche le menu de gestion des tournois en cours."""
-        tournaments = TournamentController.list_tournaments()
+        tournaments = self.tournament_controller.list_tournaments()
         if not tournaments:
             print("❌ Aucun tournoi disponible.")
             return
@@ -200,9 +204,9 @@ class MainView:
         prompt = "Votre choix : "
         action = self.get_valid_input(prompt, 1, 3)
         if action == 1:
-            TournamentController.manage_tournament(tournament)
+            self.tournament_controller.manage_tournament(tournament)
         elif action == 2:
-            TournamentController.show_rankings(tournament)
+            self.tournament_controller.show_rankings(tournament)
         else:
             self.afficher_menu()
 
