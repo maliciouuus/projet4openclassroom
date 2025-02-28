@@ -1,7 +1,4 @@
 """Module de gestion du menu principal."""
-from controllers.exit import Exit
-from controllers.player_controller import PlayerController
-from controllers.tournament_controller import TournamentController
 from models.player import Player
 
 
@@ -178,10 +175,14 @@ class MainView:
             print("❌ Option invalide.")
             return
 
-        formatted_players = PlayerController.format_players(sorted_players)
-        if formatted_players:
+        if sorted_players:
             print("\n📋 Liste des joueurs :")
-            print("\n".join(formatted_players))
+            for player in sorted_players:
+                print(
+                    f"Nom: {player['name']}, "
+                    f"Prénom: {player['first_name']}, "
+                    f"Rang: {player['rank']}"
+                )
         else:
             print("❌ Aucun joueur à afficher.")
 
